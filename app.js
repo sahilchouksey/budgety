@@ -459,7 +459,6 @@ var controller = (function(budgetCtrl, UICtrl) {
 
   return {
     init: function() {
-      document.querySelector(inputBtn).style.display = 'block';
       console.log('Application has started.')
       UICtrl.displayMonth();
       setupEventListensers();
