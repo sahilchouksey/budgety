@@ -282,6 +282,21 @@ h2 {
   }
 }
 
-button:disabled {
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  pointer-events: auto;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+a.btn[disabled] {
+  pointer-events: none;
+}
+
+*.disabled {
   cursor: not-allowed;
-}  
+}
