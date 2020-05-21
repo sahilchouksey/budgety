@@ -310,12 +310,12 @@ var UIController = (function() {
 
     },
 
-    displayPercentages: function(percentage) {
+    displayPercentages: function(percentage, budget) {
       var fields = document.querySelectorAll(DOMStrings.expPercentageLabel);
 
 
       nodeListForEach(fields, function(current, index) {
-        if (percentage[index] > 0) {
+        if (percentage[index] > 0 && budget > 0) {
           current.textContent = percentage[index] + '%';
         } else {
           current.textContent = '---';
@@ -404,7 +404,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     var percentages = budgetCtrl.getPercentages();
 
     // 3. update the UI with the new percentages
-    UICtrl.displayPercentages(percentages);
+    UICtrl.displayPercentages(percentages, updateBudget.budget);
   };
 
 
