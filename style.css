@@ -282,4 +282,6 @@ h2 {
   }
 }
 
-[type=button]:not(:disabled)
+button:disabled {
+  cursor: not-allowed;
+}  
