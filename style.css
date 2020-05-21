@@ -276,4 +276,8 @@ h2 {
 .unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
 
-@media(max-width: 995px){.expenses__title{margin-top: 50px;}}
+@media (max-width: 995px) {
+  .expenses__title {
+    margin-top: 50px;
+  }
+}
