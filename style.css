@@ -152,6 +152,9 @@ body {
 .add__description { width: 400px;}
 .add__value { width: 100px;}
 
+ion-icon {
+  color: #28B9B5;
+}
 .add__btn {
     font-size: 35px;
     background: none;
