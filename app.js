@@ -254,10 +254,10 @@ var UIController = (function() {
 
       if (type === 'inc') {
         element = DOMStrings.incomeContainer;
-        html = '<div class="item clearfix" id="inc-&id&"><div class="item__description">&description&</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+        html = '<div class="item clearfix" id="inc-&id&"><div class="item__description">&description&</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="fas fa-trash-alt"></i></button></div></div></div>'
       } else if (type === 'exp') {
         element = DOMStrings.expensesContainer;
-        html = '<div class="item clearfix" id="exp-&id&"><div class="item__description">&description&</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+        html = '<div class="item clearfix" id="exp-&id&"><div class="item__description">&description&</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="fas fa-trash-alt"></i></button></div></div></div>'
       };
 
       newHtml = html.replace('&id&', obj.id);
@@ -310,12 +310,12 @@ var UIController = (function() {
 
     },
 
-    displayPercentages: function(percentage, budget) {
+    displayPercentages: function(percentage) {
       var fields = document.querySelectorAll(DOMStrings.expPercentageLabel);
 
 
       nodeListForEach(fields, function(current, index) {
-        if (percentage[index] > 0 && budget > 0) {
+        if (percentage[index] > 0 && percentage[index] <= 100 ) {
           current.textContent = percentage[index] + '%';
         } else {
           current.textContent = '---';
@@ -404,7 +404,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     var percentages = budgetCtrl.getPercentages();
 
     // 3. update the UI with the new percentages
-    UICtrl.displayPercentages(percentages, updateBudget.budget);
+    UICtrl.displayPercentages(percentages);
   };
 
 
